@@ -3,7 +3,7 @@ package com.example.ddd.in.practice.logic;
 import lombok.Getter;
 
 @Getter
-public final class SnackMachine {
+public final class SnackMachine extends Entity {
 
     private Money moneyInside = new Money(0, 0, 0, 0, 0, 0);
     private Money moneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
