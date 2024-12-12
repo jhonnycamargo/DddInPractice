@@ -3,13 +3,13 @@ package com.example.ddd.in.practice.logic;
 import lombok.Getter;
 
 @Getter
-public class Money {
-    private int oneCentCount;
-    private int tenCentCount;
-    private int quarterCount;
-    private int oneDollarCount;
-    private int fiveDollarCount;
-    private int twentyDollarCount;
+public class Money extends ValueObject<Money> {
+    private final int oneCentCount;
+    private final int tenCentCount;
+    private final int quarterCount;
+    private final int oneDollarCount;
+    private final int fiveDollarCount;
+    private final int twentyDollarCount;
 
     public Money(
             int oneCentCount,
@@ -18,6 +18,7 @@ public class Money {
             int oneDollarCount,
             int fiveDollarCount,
             int twentyDollarCount) {
+        super(Money.class);
         this.oneCentCount = oneCentCount;
         this.tenCentCount = tenCentCount;
         this.quarterCount = quarterCount;
@@ -34,5 +35,10 @@ public class Money {
                 money1.oneDollarCount + money2.oneDollarCount,
                 money1.fiveDollarCount + money2.fiveDollarCount,
                 money1.twentyDollarCount + money2.twentyDollarCount);
+    }
+
+    @Override
+    public boolean notEquals(Money value1, Money value2) {
+        return false;
     }
 }
