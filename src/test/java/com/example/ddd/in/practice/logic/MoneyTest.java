@@ -20,4 +20,22 @@ public class MoneyTest {
         Assertions.assertEquals(10, sum.getFiveDollarCount());
         Assertions.assertEquals(12, sum.getTwentyDollarCount());
     }
+
+    @Test
+    void two_money_instances_are_equal_if_contain_the_same_money_amount() {
+        Money money1 = new Money(1, 2, 3, 4, 5, 6);
+        Money money2 = new Money(1, 2, 3, 4, 5, 6);
+
+        Assertions.assertEquals(money1, money2);
+        Assertions.assertEquals(money1.hashCode(), money2.hashCode());
+    }
+
+    @Test
+    void two_money_instances_are_not_equal_if_contain_different_money_amount() {
+        Money money1 = new Money(1, 2, 3, 4, 5, 6);
+        Money money2 = new Money(1, 2, 3, 4, 5, 7);
+
+        Assertions.assertNotEquals(money1, money2);
+        Assertions.assertNotEquals(money1.hashCode(), money2.hashCode());
+    }
 }
