@@ -6,7 +6,6 @@ import lombok.ToString;
 import java.util.Objects;
 
 @ToString
-@EqualsAndHashCode
 public abstract class ValueObject<T> {
     private Class<T> type;
 

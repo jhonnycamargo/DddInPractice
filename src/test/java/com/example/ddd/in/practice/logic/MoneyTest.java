@@ -26,7 +26,7 @@ public class MoneyTest {
         Money money1 = new Money(1, 2, 3, 4, 5, 6);
         Money money2 = new Money(1, 2, 3, 4, 5, 6);
 
-        Assertions.assertEquals(money1, money2);
+        Assertions.assertTrue(money1.equals(money2));
         Assertions.assertEquals(money1.hashCode(), money2.hashCode());
     }
 

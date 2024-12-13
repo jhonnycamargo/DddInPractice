@@ -1,8 +1,10 @@
 package com.example.ddd.in.practice.logic;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode(callSuper = false)
 public class Money extends ValueObject<Money> {
     private final int oneCentCount;
     private final int tenCentCount;
